@@ -7,7 +7,7 @@ module.exports = {
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended'
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],  // 1
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },
   plugins: [
@@ -16,20 +16,18 @@ module.exports = {
     'react-refresh'
   ],
   rules: {
-    'react-refresh/only-export-components': 'warn', //validate that your components can safely be updated with fast refresh
-    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+    'react-refresh/only-export-components': 'warn',
+    "react-hooks/rules-of-hooks": "error", 
+    "react-hooks/exhaustive-deps": "warn", 
     'react/prop-types': 0,
     'react/display-name': 0,
-
-    'rules': {
-      'no-restricted-imports': [
+  
+    'no-restricted-imports': [
         'error',
         {
           'patterns': ['@mui/*/*/*']
         }
-      ]
-    },
+    ],
 
     'no-console': 1,
     'no-lonely-if': 1,
