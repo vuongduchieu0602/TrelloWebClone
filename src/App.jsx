@@ -5,6 +5,8 @@ import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
+import Container from '@mui/material/Container'
+import { Height } from '@mui/icons-material'
 
 function ModeSelect() {
   const { mode, setMode } = useColorScheme()
@@ -34,9 +36,9 @@ function ModeSelect() {
 
 function App() {
   return (
-    <>
+    <Container disableGutters maxWidth={ false } sx={{ height:'100vh', bgcolor: 'red' }}>
       <ModeSelect />
-    </>
+    </Container>
   )
 }
 
