@@ -7,6 +7,7 @@ import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
 import Container from '@mui/material/Container'
 import { Height } from '@mui/icons-material'
+import Box from '@mui/material/Box'
 
 function ModeSelect() {
   const { mode, setMode } = useColorScheme()
@@ -37,7 +38,33 @@ function ModeSelect() {
 function App() {
   return (
     <Container disableGutters maxWidth={ false } sx={{ height:'100vh', bgcolor: 'red' }}>
-      <ModeSelect />
+      <Box sx={{
+        bgcolor: 'primary.light',
+        height: (theme) => theme.trello.appBarHeight,
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center'
+      }}>
+        <ModeSelect />
+      </Box>
+      <Box sx={{
+        bgcolor: 'primary.dark',
+        height: (theme) => theme.trello.boardBarHeight,
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center'
+      }}>
+        Board Bar
+      </Box>
+      <Box sx={{
+        bgcolor: 'primary.light',
+        height: (theme) => `calc(100vh - ${theme.trello.appBarHeight} - ${theme.trello.boardBarHeight} )`,
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center'
+      }}>
+        Board Content
+      </Box>
     </Container>
   )
 }
