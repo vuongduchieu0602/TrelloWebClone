@@ -21,12 +21,13 @@ function Templates() {
   return (
     <div>
       <Button
+        sx={{ color: 'white' }}
         id="fade-button-templates"
         aria-controls={open ? 'fade-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-        endIcon={<ExpandMoreIcon />}
+        endIcon={<ExpandMoreIcon sx={{ color: 'white' }}/>}
       >
         Templates
       </Button>

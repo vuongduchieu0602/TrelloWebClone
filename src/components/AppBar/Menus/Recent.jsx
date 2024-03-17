@@ -21,12 +21,13 @@ function Recent() {
   return (
     <div>
       <Button
+        sx={{ color: 'white' }}
         id="fade-button-recent"
         aria-controls={open ? 'fade-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-        endIcon={<ExpandMoreIcon />}
+        endIcon={<ExpandMoreIcon sx={{ color: 'white' }}/>}
       >
         Recent
       </Button>

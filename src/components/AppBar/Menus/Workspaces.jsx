@@ -25,12 +25,13 @@ function Workspaces() {
   return (
     <div>
       <Button
+        sx={{ color: 'white' }}
         id="fade-button-workspaces"
         aria-controls={open ? 'fade-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-        endIcon={<ExpandMoreIcon />}
+        endIcon={<ExpandMoreIcon sx={{ color: 'white' }}/>}
       >
         Workspaces
       </Button>
