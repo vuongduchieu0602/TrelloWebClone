@@ -39,7 +39,8 @@ function AppBar() {
       gap: 2,
       paddingX: '16px',
       overflowX: 'auto',
-      backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#2c3e50' : '#1565c0')  
+      overflowY: 'hidden',
+      backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#2c3e50' : '#1565c0')
     }} >
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <AppsIcon sx={{ color:'white' }}/>
