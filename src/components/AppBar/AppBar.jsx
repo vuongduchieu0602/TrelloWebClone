@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import Box from '@mui/material/Box'
 
-import ModeSelect from '../ModeSelect/index'
+import ModeSelect from '../ModeSelect/ModeSelect'
 import SvgIcon from '@mui/material/SvgIcon'
 
 import Button from '@mui/material/Button'
