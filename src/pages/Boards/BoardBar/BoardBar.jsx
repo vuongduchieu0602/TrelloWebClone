@@ -19,7 +19,7 @@ const MENU_STYLE = {
   paddingX: '5px',
   borderRadius: '4px',
   '& .MuiSvgIcon-root': {
-    color: 'white',
+    color: 'white'
   },
   '&:hover': {
     bgcolor: 'primary.50'
@@ -43,38 +43,38 @@ function BoardBar() {
     }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <Chip sx = {MENU_STYLE}
-          icon={<DashboardIcon />} 
-          label="Vuong Duc Hieu Trello App" 
+          icon={<DashboardIcon />}
+          label="Vuong Duc Hieu Trello App"
           clickable
         />
-        <Chip 
+        <Chip
           sx = {MENU_STYLE}
-          icon={<VpnLockIcon />} 
-          label="Public/Private Workspace" 
+          icon={<VpnLockIcon />}
+          label="Public/Private Workspace"
           clickable
         />
-        <Chip 
+        <Chip
           sx = {MENU_STYLE}
-          icon={<AddToDriveIcon />} 
-          label="Add to Google Driver" 
+          icon={<AddToDriveIcon />}
+          label="Add to Google Driver"
           clickable
         />
-        <Chip 
+        <Chip
           sx = {MENU_STYLE}
-          icon={<BoltIcon />} 
-          label="Automation" 
+          icon={<BoltIcon />}
+          label="Automation"
           clickable
         />
-        <Chip 
+        <Chip
           sx = {MENU_STYLE}
-          icon={<FilterListIcon />} 
-          label="Filters" 
+          icon={<FilterListIcon />}
+          label="Filters"
           clickable
         />
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-        <Button 
-          variant="outlined" 
+        <Button
+          variant="outlined"
           startIcon={<PersonAddIcon />}
           sx={{
             color: 'white',
@@ -87,7 +87,7 @@ function BoardBar() {
           Create
         </Button>
 
-        <AvatarGroup 
+        <AvatarGroup
           max={7}
           sx = {{
             gap: '10px',
@@ -127,9 +127,6 @@ function BoardBar() {
           <Tooltip title="vuong hieu">
             <Avatar alt="vuong hieu" src="https://i.pinimg.com/564x/4b/96/f6/4b96f65490c69c5fbf110a685da034c5.jpg" />
           </Tooltip>
-          
-          
-          
         </AvatarGroup>
       </Box>
     </Box>

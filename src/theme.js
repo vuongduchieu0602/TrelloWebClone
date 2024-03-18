@@ -1,4 +1,4 @@
-import { experimental_extendTheme as extendTheme} from '@mui/material/styles'
+import { experimental_extendTheme as extendTheme } from '@mui/material/styles'
 
 const APP_BAR_HEIGHT = '58px'
 const BOARD_BAR_HEIGHT = '60px'
@@ -38,7 +38,7 @@ const theme = extendTheme({
       styleOverrides: {
         root: {
           textTransform: 'none',
-          borderWidth: '0.5px',
+          borderWidth: '0.5px'
         }
       }
     },
@@ -60,7 +60,7 @@ const theme = extendTheme({
     },
     MuiOutlinedInput: {
       styleOverrides: {
-        root: ({ theme }) => ({
+        root: {
           fontSize: '0.875rem',
           '& fieldset': {
             borderWidth: '0.5px !important'
@@ -71,14 +71,12 @@ const theme = extendTheme({
           '&.Mui-focused fieldset': {
             borderWidth: '1px !important'
           }
-        })
+        }
       }
     },
     MuiSvgIcon: {
       styleOverrides: {
-        root: ({ theme }) => ({
-          
-        })
+        root: { }
       }
     }
   }

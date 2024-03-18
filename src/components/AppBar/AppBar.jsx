@@ -27,7 +27,7 @@ import SearchIcon from '@mui/icons-material/Search'
 import CloseIcon from '@mui/icons-material/Close'
 
 function AppBar() {
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState('')
 
   return (
     <Box sx={{
@@ -49,13 +49,13 @@ function AppBar() {
           <Typography variant="span" sx={{ color:'white', fontSize:'1.2rem', fontWeight:'bold' }}>Trello</Typography>
         </Box>
 
-        <Box sx={{ display: { xs: 'none', md: 'flex'}, gap: 1 }}>
+        <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1 }}>
           <Workspaces />
           <Recent />
           <Starred />
           <Templates />
 
-          <Button 
+          <Button
             sx={{
               color: 'white',
               border: 'none',
@@ -63,7 +63,7 @@ function AppBar() {
                 border: 'none'
               }
             }}
-            variant="outlined" 
+            variant="outlined"
             startIcon={<AddToPhotosIcon sx={{ color: 'white' }}/>}
           >
             Create
@@ -73,10 +73,10 @@ function AppBar() {
       </Box>
 
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-        <TextField 
-          id="outlined-search" 
-          label="Search..." 
-          type="text" 
+        <TextField
+          id="outlined-search"
+          label="Search..."
+          type="text"
           size="small"
           value={searchValue}
           onChange = { (e) => setSearchValue(e.target.value) }
@@ -87,17 +87,17 @@ function AppBar() {
               </InputAdornment>
             ),
             endAdornment: (
-              <CloseIcon 
+              <CloseIcon
                 fontSize = "small"
                 sx = {{
                   color: searchValue ? 'white' : 'transparent', cursor: 'pointer'
                 }}
-                onClick = { ()=>setSearchValue('') }
+                onClick = { () => setSearchValue('') }
               />
             )
           }}
-          sx={{ 
-            minWidth: '120px' ,
+          sx={{
+            minWidth: '120px',
             maxWidth: '180px',
             '& input': { color: 'white' },
             '& label': { color: 'white' },
@@ -113,7 +113,7 @@ function AppBar() {
                 borderColor: 'white'
               }
             }
-          }} 
+          }}
         />
 
         <ModeSelect />

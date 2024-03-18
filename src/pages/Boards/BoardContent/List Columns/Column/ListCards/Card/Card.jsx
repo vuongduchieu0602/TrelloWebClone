@@ -11,7 +11,7 @@ import AttachmentIcon from '@mui/icons-material/Attachment'
 
 import GroupIcon from '@mui/icons-material/Group'
 
-function Card({temporaryHideMedia}) {
+function Card({ temporaryHideMedia }) {
   if (temporaryHideMedia) {
     return (
       <MuiCard sx={{
@@ -49,7 +49,7 @@ function Card({temporaryHideMedia}) {
             Vuong Duc Hieu
           </Typography>
         </CardContent>
-        <CardActions sx={{ padding: '0 4px 8px 4px'}}>
+        <CardActions sx={{ padding: '0 4px 8px 4px' }}>
           <Button size="small" startIcon={<GroupIcon />}>20</Button>
           <Button size="small" startIcon={<CommentIcon />}>15</Button>
           <Button size="small" startIcon={<AttachmentIcon />}>10</Button>
