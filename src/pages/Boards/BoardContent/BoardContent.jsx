@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box'
 import ListColumns from './List Columns/ListColumns'
 
-function BoardContent() {
+function BoardContent({ board }) {
   return (
     <Box sx={{
       bgcolor: 'primary.light',
@@ -11,7 +11,7 @@ function BoardContent() {
       backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#34495e' : '#1976d2'),
       padding: '10px 0'
     }}>
-      <ListColumns />
+      <ListColumns columns={board?.columns}/>
     </Box>
   )
 }
