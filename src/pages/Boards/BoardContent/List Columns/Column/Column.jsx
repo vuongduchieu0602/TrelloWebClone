@@ -20,7 +20,7 @@ import AddCardIcon from '@mui/icons-material/AddCard'
 import DragHandleIcon from '@mui/icons-material/DragHandle'
 import ListCards from './ListCards/ListCards'
 
-function Column() {
+function Column({ column }) {
   const [anchorEl, setAnchorEl] = useState(null)
   const open = Boolean(anchorEl)
   const handleClick = (event) => {
@@ -55,7 +55,7 @@ function Column() {
 
           }}
         >
-          Column Title
+          { column?.title }
         </Typography>
         <Tooltip title="More options">
           <ExpandMoreIcon 
@@ -119,7 +119,7 @@ function Column() {
       </Box>
 
       {/** List Cards */}
-      <ListCards />
+      <ListCards cards={column?.cards}/>
 
       {/** Box Column Footer */}
       <Box sx={{

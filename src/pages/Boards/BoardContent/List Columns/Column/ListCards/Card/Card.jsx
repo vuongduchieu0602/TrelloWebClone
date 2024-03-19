@@ -11,52 +11,48 @@ import AttachmentIcon from '@mui/icons-material/Attachment'
 
 import GroupIcon from '@mui/icons-material/Group'
 
-function Card({ temporaryHideMedia }) {
-  if (temporaryHideMedia) {
-    return (
-      <MuiCard sx={{
-        cursor: 'pointer',
-        boxShadow: '0 1px 1px rgba(0, 0, 0, 0.2)',
-        overflow: 'unset'
-      }}>
-        <CardContent sx={{
-          padding: 1.5,
-          '&:last-child': { padding: 1.5 }
-        }}>
-          <Typography>
-            Vuong Duc Hieu
-          </Typography>
-        </CardContent>
-      </MuiCard>
-    )
-  } else {
-    return (
-      <MuiCard sx={{
-        cursor: 'pointer',
-        boxShadow: '0 1px 1px rgba(0, 0, 0, 0.2)',
-        overflow: 'unset'
-      }}>
+
+function Card({ card }) {
+  const shouldShowCardAction = () => {
+    return !!card?.memberIds.length || !!card?.comments.length || !!card?.attachments.length
+  }
+
+  return (
+    <MuiCard sx={{
+      cursor: 'pointer',
+      boxShadow: '0 1px 1px rgba(0, 0, 0, 0.2)',
+      overflow: 'unset'
+    }}>
+      {card?.cover &&
         <CardMedia
           sx={{ height: 140 }}
-          image="https://i.pinimg.com/564x/84/6c/d0/846cd0fae3dff07a325e7c1befa517d2.jpg"
+          image={card?.cover}
           title="green iguana"
         />
-        <CardContent sx={{
-          padding: 1.5,
-          '&:last-child': { padding: 1.5 }
-        }}>
-          <Typography>
-            Vuong Duc Hieu
-          </Typography>
-        </CardContent>
+      }
+      <CardContent sx={{
+        padding: 1.5,
+        '&:last-child': { padding: 1.5 }
+      }}>
+        <Typography>
+          {card?.title}
+        </Typography>
+      </CardContent>
+      {shouldShowCardAction() &&
         <CardActions sx={{ padding: '0 4px 8px 4px' }}>
-          <Button size="small" startIcon={<GroupIcon />}>20</Button>
-          <Button size="small" startIcon={<CommentIcon />}>15</Button>
-          <Button size="small" startIcon={<AttachmentIcon />}>10</Button>
+          {!!card?.memberIds.length &&
+          <Button size="small" startIcon={<GroupIcon />}>{card?.memberIds.length}</Button>
+          }
+          {!!card?.comments.length &&
+          <Button size="small" startIcon={<CommentIcon />}>{card?.comments.length}</Button>
+          }
+          {!!card?.attachments.length &&
+          <Button size="small" startIcon={<AttachmentIcon />}>{card?.attachments.length}</Button>
+          }
         </CardActions>
-      </MuiCard>
-    )
-  }
+      }
+    </MuiCard>
+  )
 }
 
 export default Card

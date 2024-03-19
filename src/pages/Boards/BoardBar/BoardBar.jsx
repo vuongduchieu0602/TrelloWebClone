@@ -5,6 +5,8 @@ import AvatarGroup from '@mui/material/AvatarGroup'
 import Tooltip from '@mui/material/Tooltip'
 import Button from '@mui/material/Button'
 
+import { capitalizeFirstLetter } from '~/utils/formatters'
+
 import DashboardIcon from '@mui/icons-material/Dashboard'
 import VpnLockIcon from '@mui/icons-material/VpnLock'
 import AddToDriveIcon from '@mui/icons-material/AddToDrive'
@@ -26,7 +28,8 @@ const MENU_STYLE = {
   }
 }
 
-function BoardBar() {
+function BoardBar({ board }) {
+
   return (
     <Box sx={{
       bgcolor: 'white',
@@ -44,13 +47,13 @@ function BoardBar() {
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <Chip sx = {MENU_STYLE}
           icon={<DashboardIcon />}
-          label="Vuong Duc Hieu Trello App"
+          label={board?.title}
           clickable
         />
         <Chip
           sx = {MENU_STYLE}
           icon={<VpnLockIcon />}
-          label="Public/Private Workspace"
+          label={capitalizeFirstLetter(board?.type)}
           clickable
         />
         <Chip

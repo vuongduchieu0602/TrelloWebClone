@@ -4,7 +4,7 @@ import Button from '@mui/material/Button'
 
 import AddBoxIcon from '@mui/icons-material/AddBox'
 
-function ListColumns() {
+function ListColumns({ columns }) {
   return (
     <Box sx={{
       width: '100%',
@@ -15,9 +15,10 @@ function ListColumns() {
       overflowY: 'hidden',
       '&::-webkit-scrollbar-track': { margin: 2 }
     }}>
-      <Column />
-      <Column />
-      <Column />
+
+      {columns?.map((column) => {
+        return <Column key={column._id} column={column}/>
+      })}
 
       <Box sx={{
         minWidth: '200px',
