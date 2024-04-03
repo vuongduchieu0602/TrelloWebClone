@@ -54,6 +54,28 @@ export const mockData = {
           { _id: 'card-id-12', boardId: 'board-id-01', columnId: 'column-id-03', title: 'Title of card 12', description: null, cover: null, memberIds: [], comments: [], attachments: [] },
           { _id: 'card-id-13', boardId: 'board-id-01', columnId: 'column-id-03', title: 'Title of card 13', description: null, cover: null, memberIds: [], comments: [], attachments: [] }
         ]
+      },
+      {
+        _id: 'column-id-04',
+        boardId: 'board-id-01',
+        title: 'Empty Column 04',
+        /**
+         * == Cách xử lý bug logic thư viện Dndkit khi column là rỗng ==
+         * Phía FE sẽ tự tạo một cái card đặc biệt: Placeholder Card, không liên quan tới BackEnd
+         * Card đặc biệt này sẽ ở giao diện UI người dùng
+         * Cấu trúc Id của card này để Unique rất đơn giản, ko cần làm random phức tạp:
+         * "columnId-placeholder-card" (mỗi column chỉ có thể có tối đa 1 Placeholder Card)
+         * Quan trọng khi tạo: đủ (_id, boardId, columnId, FE_PlaceholderCard)
+         */
+        cardOrderIds: ['column-id-04-placeholder-card'],
+        cards: [
+          {
+            _id: 'column-id-04-placeholder-card',
+            boardId: 'board-id-01',
+            columnId: 'column-id-04',
+            FE_PlaceholderCard: true
+          }
+        ]
       }
     ]
   }
